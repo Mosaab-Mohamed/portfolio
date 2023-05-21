@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ImLinkedin, BsGithub } from "shared/assets/icons";
 import type { IHeroPage } from "@/shared/types/pages";
 import { getPage } from "@/shared/utils";
+import { Spinner } from "../Spinner";
 import classes from "./style.module.scss";
 
 export function Hero() {
@@ -24,7 +25,7 @@ export function Hero() {
 	return (
 		<section className={classes.hero}>
 			{!props ? (
-				<p>Loading...</p>
+				<Spinner />
 			) : isError ? (
 				"Something went wrong, please trye again."
 			) : (

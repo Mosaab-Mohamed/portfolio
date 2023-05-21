@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import classes from "./style.module.scss";
 
 interface IScrollableImageProps {
@@ -12,6 +12,7 @@ export function ScrollableImage({
 }: IScrollableImageProps) {
 	const imgContainerRef = useRef<HTMLDivElement | null>(null);
 	const imgRef = useRef<HTMLImageElement | null>(null);
+	const [isLoaded, setIsLoaded] = useState(false);
 
 	const animateScroll = () => {
 		if (!imgRef.current || !imgContainerRef.current) return;
@@ -37,7 +38,7 @@ export function ScrollableImage({
 
 		const observer = new IntersectionObserver(
 			(entries) => {
-				if (entries[0]?.isIntersecting) animateScroll();
+				if (entries[0]?.isIntersecting && isLoaded) animateScroll();
 			},
 			{ threshold: 1 }
 		);
@@ -62,6 +63,7 @@ export function ScrollableImage({
 				{...imgProps}
 				ref={imgRef}
 				loading="lazy"
+				onLoad={() => setIsLoaded(true)}
 			/>
 		</div>
 	);

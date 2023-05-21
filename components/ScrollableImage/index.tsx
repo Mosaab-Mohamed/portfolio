@@ -62,7 +62,6 @@ export function ScrollableImage({
 				className="projectImg"
 				{...imgProps}
 				ref={imgRef}
-				loading="lazy"
 				onLoad={() => setIsLoaded(true)}
 			/>
 		</div>

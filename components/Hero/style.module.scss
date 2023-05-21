@@ -1,0 +1,118 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.hero {
+	position: relative;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 45%;
+	height: 100%;
+	border-radius: 5px;
+	overflow: hidden;
+	text-align: center;
+	background-color: $bgInnerColor1;
+	color: $textColor;
+	@include md-screen {
+		width: 100%;
+		border-radius: 5px 5px 0 0;
+	}
+	:global {
+		.heroHeader {
+			min-height: 40%;
+			margin-bottom: 25px;
+			.heroCover {
+				height: 100%;
+				background-size: cover;
+				background-position: bottom;
+				clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+			}
+			.heroImage {
+				position: relative;
+				width: 150px;
+				height: 150px;
+				margin: -100px auto 0;
+				img {
+					position: relative;
+
+					border-radius: 50%;
+					border: 3px solid #31313a;
+					object-fit: cover;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					left: -10px;
+					top: 10px;
+					width: 100%;
+					height: 100%;
+					border-radius: 50%;
+					background: linear-gradient(
+						90deg,
+						$transparentPrimaryColor,
+						rgba(0, 0, 0, 0.164)
+					);
+				}
+			}
+		}
+
+		.heroName {
+			font-size: 2rem;
+			margin: 20px 0;
+			@include md-screen {
+				margin: 30px 0 10px 0;
+				font-size: 1.5rem;
+			}
+		}
+		.heroJob {
+			font-size: 1.3rem;
+			margin: 20px 0;
+			color: $primaryColor;
+			@include md-screen {
+				margin: 10px auto;
+				font-size: 1rem;
+			}
+		}
+		.heroSocial {
+			display: flex;
+			width: 50%;
+			margin: 20px auto;
+			justify-content: center;
+			@include md-screen {
+				margin: 10px auto;
+			}
+			.heroSocialLink {
+				margin: 0 10px;
+				.portfolioIcon {
+					font-size: 1.2rem;
+					cursor: pointer;
+					color: $textColor;
+					transition: all 0.3s linear;
+					&:hover {
+						color: $primaryColor;
+					}
+				}
+			}
+		}
+		.heroCV {
+			position: relative;
+			width: 100%;
+			padding: 20px 15px;
+			background-color: transparent;
+			color: $textColor;
+			border: none;
+			font-size: 1.3rem;
+			cursor: pointer;
+			transition: all 0.5s ease;
+			&::before {
+				@extend %shadow_line;
+				top: 0;
+			}
+			&:hover {
+				color: $primaryColor;
+			}
+		}
+	}
+}

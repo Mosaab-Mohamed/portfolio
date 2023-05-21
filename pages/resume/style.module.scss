@@ -1,0 +1,75 @@
+@import "styles/variables";
+
+.resumeExperience,
+.resumeEducation {
+	padding: 25px;
+	:global {
+		.header {
+			position: relative;
+			display: flex;
+			align-items: center;
+			padding: 15px 0;
+			font-size: 1.3rem;
+			color: $primaryColor;
+			.portfolioIcon {
+				margin-right: 10px;
+				font-size: 1.8rem;
+			}
+			&::after {
+				@extend %shadow_line;
+				width: 70%;
+				left: 15%;
+			}
+		}
+
+		.job,
+		.stage {
+			position: relative;
+			padding: 20px 0;
+			.chip {
+				display: inline-block;
+				padding: 3px 5px;
+				margin-bottom: 10px;
+				border: 1px solid;
+				border-radius: 5px;
+				color: $textShadowColor;
+				&.present {
+					color: $primaryColor;
+				}
+			}
+
+			.title {
+				font-size: 1.1rem;
+				margin-bottom: 10px;
+			}
+
+			.firm,
+			.degree {
+				margin-bottom: 15px;
+				text-decoration: underline;
+				color: $textShadowColor;
+			}
+
+			.description,
+			.description {
+				color: $textShadowColor;
+			}
+			&::after {
+				@extend %shadow_line;
+			}
+		}
+	}
+}
+
+.resumeSkills {
+	:global {
+		.list {
+			padding: 25px;
+			.item {
+				.portfolioIcon {
+					color: $primaryColor;
+				}
+			}
+		}
+	}
+}

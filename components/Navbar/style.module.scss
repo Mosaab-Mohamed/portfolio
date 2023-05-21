@@ -1,0 +1,44 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.navbar {
+	position: relative;
+	margin-right: 10px;
+	border-radius: 5px;
+	background-color: $bgInnerColor1;
+	@include md-screen {
+		display: none;
+	}
+	:global {
+		.navLink {
+			position: relative;
+			text-align: center;
+			font-size: 0.8rem;
+			color: $textColor;
+			cursor: pointer;
+			transition: all 0.3s linear;
+			flex: 1;
+			&.active,
+			&:hover {
+				color: $primaryColor;
+				.portfolio-icon {
+					fill: $primaryColor;
+				}
+			}
+			&:not(:last-of-type) {
+				&::after {
+					@extend %shadow_line;
+				}
+			}
+			a {
+				display: block;
+				padding: 15px 10px;
+			}
+			.portfolioIcon {
+				display: block;
+				margin: 0 auto 10px;
+				font-size: 1.3rem;
+			}
+		}
+	}
+}

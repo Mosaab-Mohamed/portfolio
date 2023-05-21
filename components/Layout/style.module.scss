@@ -1,0 +1,36 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.layout {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	:global {
+		.container {
+			position: relative;
+			z-index: 100;
+			display: flex;
+			align-items: center;
+			width: 90%;
+			height: 90vh;
+			@include md-screen {
+				display: block;
+			}
+			.slides {
+				position: relative;
+				width: 45%;
+				height: 90%;
+				border-radius: 0 5px 5px 0;
+				overflow-y: auto;
+				color: $textColor;
+				@include md-screen {
+					width: 100%;
+					height: auto;
+					border-radius: 0 0 5px 5px;
+				}
+			}
+		}
+	}
+}

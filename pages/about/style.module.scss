@@ -1,0 +1,50 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.intro {
+	margin-bottom: 50px;
+	:global {
+		.introContent {
+			padding: 25px;
+			font-size: 1rem;
+			line-height: 30px;
+			color: $textShadowColor;
+		}
+		.introMetadata {
+			padding: 0 25px;
+			.metadataItem .colored {
+				color: $textShadowColor;
+			}
+		}
+	}
+}
+
+.techSkills {
+	:global {
+		.list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 25px;
+			.techItem {
+				display: flex;
+				align-items: center;
+				width: 45%;
+				padding: 5px 0;
+				@include sm-screen {
+					width: 100%;
+				}
+				.portfolioIcon {
+					&:first-of-type {
+						margin-right: 10px;
+						color: $primaryColor;
+					}
+					&:last-of-type {
+						margin-left: 15px;
+						font-size: 1.2rem;
+					}
+				}
+			}
+		}
+	}
+}

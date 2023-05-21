@@ -1,0 +1,35 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.projectCard {
+	padding: 35px 10px;
+	margin-bottom: 20px;
+	border: 1px solid #88888859;
+	border-radius: 5px;
+	text-align: center;
+	:global {
+		.projectName {
+			position: relative;
+			display: block;
+			margin-bottom: 25px;
+			letter-spacing: 5px;
+		}
+
+		.projectLink {
+			padding: 15px 15px;
+			margin: 5px 0;
+			font-size: 1rem;
+			background-color: #565656;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			letter-spacing: 3px;
+			transition: all 0.2s ease;
+			cursor: pointer;
+			&:hover {
+				color: $primaryColor;
+				transform: scale(1.01);
+			}
+		}
+	}
+}

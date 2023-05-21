@@ -1,0 +1,24 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.contactsList {
+	padding: 25px;
+	:global {
+		.contactItem {
+			display: flex;
+			align-items: center;
+			padding: 15px;
+			margin-bottom: 10px;
+			border: 1px solid rgba(128, 128, 128, 0.459);
+			border-radius: 5px;
+			overflow-wrap: anywhere;
+			@include md-screen {
+				font-size: 0.8rem;
+			}
+			.portfolioIcon {
+				margin-right: 10px;
+				color: $primaryColor;
+			}
+		}
+	}
+}

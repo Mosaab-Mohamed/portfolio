@@ -1,0 +1,30 @@
+@import "styles/variables";
+
+.slideHeader {
+	position: relative;
+	padding: 25px;
+	letter-spacing: 2px;
+	&::after {
+		@extend %shadow_line;
+	}
+	:global {
+		.colored {
+			position: relative;
+			color: $primaryColor;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -10px;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: linear-gradient(
+					90deg,
+					$transparentPrimaryColor,
+					rgba(0, 0, 0, 0.164)
+				);
+			}
+		}
+	}
+}

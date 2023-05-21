@@ -1,0 +1,63 @@
+@import "styles/variables";
+
+.projects {
+	padding: 25px;
+}
+
+.project {
+	padding: 25px;
+	:global {
+		.projectDescription {
+			margin-bottom: 30px;
+			color: $textShadowColor;
+			white-space: pre-line;
+		}
+
+		.projectSkills {
+			padding-left: 15px;
+			margin-bottom: 20px;
+			.header {
+				margin-bottom: 10px;
+				font-weight: 500;
+			}
+			ul {
+				list-style-type: disc;
+			}
+		}
+
+		.projectTechnologies {
+			.list {
+				margin-bottom: 15px;
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				.chip {
+					margin: 3px;
+					padding: 3px 8px;
+					border-radius: 15px;
+					font-size: 0.9rem;
+					background-color: $transparentPrimaryColor;
+				}
+			}
+		}
+
+		.projectLink {
+			display: block;
+			padding: 10px;
+			margin: 10px auto;
+			width: fit-content;
+			font-size: 0.9rem;
+			background-color: #565656;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			letter-spacing: 3px;
+			transition: all 0.2s ease;
+			cursor: pointer;
+			&:hover {
+				color: $primaryColor;
+				transform: scale(1.01);
+			}
+		}
+	}
+}

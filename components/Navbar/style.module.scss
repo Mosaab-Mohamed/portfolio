@@ -7,9 +7,14 @@
 	border-radius: 5px;
 	background-color: $bgInnerColor1;
 	@include md-screen {
-		display: none;
+		margin: 0 0 10px 0;
 	}
 	:global {
+		@include md-screen {
+			ul {
+				display: flex;
+			}
+		}
 		.navLink {
 			position: relative;
 			text-align: center;
@@ -28,6 +33,19 @@
 			&:not(:last-of-type) {
 				&::after {
 					@extend %shadow_line;
+					@include md-screen {
+						left: initial;
+						right: 0;
+						top: 0;
+						width: 1px;
+						height: 100%;
+						background-image: linear-gradient(
+							180deg,
+							rgba(255, 254, 254, 0.031372549),
+							rgba(140, 140, 140, 0.6039215686),
+							rgba(255, 254, 254, 0.031372549)
+						);
+					}
 				}
 			}
 			a {

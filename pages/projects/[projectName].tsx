@@ -31,6 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export default function ProjectDetails(props: IProject) {
+	console.log(props.description.replaceAll("An", "<br/>"));
 	return (
 		<Slide>
 			<Head>
@@ -41,7 +42,12 @@ export default function ProjectDetails(props: IProject) {
 			<div className={classes.project}>
 				<ScrollableImage imgProps={{ src: props.image, alt: props.name }} />
 
-				<p className="projectDescription">{props.description}</p>
+				<p
+					className="projectDescription"
+					dangerouslySetInnerHTML={{
+						__html: props.description.replaceAll("\\n", "<br/>"),
+					}}
+				/>
 
 				<div className="projectSkills">
 					<h2 className="header">Key Features</h2>

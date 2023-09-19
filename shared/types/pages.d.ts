@@ -32,6 +32,7 @@ export interface IResumePage extends IPage {
 
 type Job = {
 	role: string;
+	order: number;
 	company: string;
 	period: string;
 	responsibilities: Array<string>;

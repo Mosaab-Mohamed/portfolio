@@ -34,18 +34,20 @@ export default function Resume(props: IResumePage) {
 					EXPERIENCE
 				</div>
 
-				{props.experience.map((job, index) => (
-					<div className="job" key={index}>
-						<div className="title">{job.role}</div>
-						<div className="chip">{job.period}</div>
-						<div className="firm">{job.company}</div>
-						<ol className="description">
-							{job.responsibilities.map((responsibility, index) => (
-								<li key={index}>{responsibility}</li>
-							))}
-						</ol>
-					</div>
-				))}
+				{props.experience
+					.sort((a, b) => a.order - b.order)
+					.map((job, index) => (
+						<div className="job" key={index}>
+							<div className="title">{job.role}</div>
+							<div className="chip">{job.period}</div>
+							<div className="firm">{job.company}</div>
+							<ol className="description">
+								{job.responsibilities.map((responsibility, index) => (
+									<li key={index}>{responsibility}</li>
+								))}
+							</ol>
+						</div>
+					))}
 			</div>
 
 			<div className={classes.resumeEducation}>

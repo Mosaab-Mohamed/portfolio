@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ImLinkedin, BsGithub } from "shared/assets/icons";
+import { ImLinkedin, BsGithub, FaHackerrank } from "shared/assets/icons";
 import type { IHeroPage } from "@/shared/types/pages";
 import { getPage } from "@/shared/utils";
 import { Spinner } from "../Spinner";
@@ -64,6 +64,15 @@ export function Hero() {
 							<li className="heroSocialLink">
 								<a href={props.github} target="_blank" rel="noreferrer">
 									<BsGithub />
+								</a>
+							</li>
+							<li className="heroSocialLink">
+								<a
+									href={props.hackerRank}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FaHackerrank />
 								</a>
 							</li>
 						</ul>

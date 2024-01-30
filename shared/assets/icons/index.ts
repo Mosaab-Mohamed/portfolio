@@ -22,6 +22,7 @@ import {
 	SiMui,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
+import { FaHackerrank } from "react-icons/fa";
 
 export {
 	BsFillPersonFill,
@@ -52,4 +53,5 @@ export {
 	TbBrandNextjs,
 	SiFirebase,
 	SiMui,
+	FaHackerrank,
 };

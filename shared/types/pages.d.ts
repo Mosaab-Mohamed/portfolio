@@ -9,6 +9,7 @@ export interface IHeroPage extends IPage {
 	personalImg: string;
 	linkedin: string;
 	github: string;
+	hackerRank: string;
 	cv: string;
 }
 

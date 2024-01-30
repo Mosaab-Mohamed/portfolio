@@ -17,7 +17,6 @@ export interface IAboutPage extends IPage {
 	content: string;
 	metadata: {
 		age: number;
-		residence: string;
 		"military service": string;
 		"job type": string;
 		[key: string]: string;
@@ -55,5 +54,4 @@ export interface IContactsPage extends IPage {
 	email: string;
 	linkedin: string;
 	github: string;
-	residence: string;
 }

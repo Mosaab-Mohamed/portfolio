@@ -47,10 +47,7 @@ export default function Contacts(props: IContactsPage) {
 						{props.email}
 					</a>
 				</div>
-				<div className="contactItem">
-					<ImLocation2 />
-					{props.residence}
-				</div>
+
 				<div className="contactItem">
 					<ImLinkedin />
 					<a href={props.linkedin} target="_blank" rel="noreferrer">

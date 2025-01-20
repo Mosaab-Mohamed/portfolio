@@ -46,7 +46,7 @@ type EducationStage = {
 };
 
 export interface IProjectsPage extends IPage {
-	projects: Array<{ name: string; image: string }>;
+	projects: Array<{ name: string; image: string, order: number }>;
 }
 
 export interface IContactsPage extends IPage {

@@ -24,7 +24,7 @@ export default function Projects(props: IProjectsPage) {
 			</Head>
 			<SectionHeader text="Recent Projects" />
 			<div className={classes.projects}>
-				{props.projects.map((project, index) => (
+				{props.projects.sort((a, b) => Number(a.order) - Number(b.order)).map((project, index) => (
 					<ProjectCard
 						key={index}
 						image={project.image}
